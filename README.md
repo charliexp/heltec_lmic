@@ -34,9 +34,17 @@ For more info, see https://www.arduino.cc/en/Guide/Libraries
 Features
 --------
 The LMIC library provides a fairly complete LoRaWAN Class A and Class B
-implementation, supporting the EU-868 and US-915 bands. Only a limited
-number of features was tested using this port on Arduino hardware, so be
-careful when using any of the untested features.
+implementation, supporting the EI-433 CN-470 EU-868 and US-915 bands. Only
+a limited number of features was tested using this port on Arduino hardware,
+so be careful when using any of the untested features.
+
+
+| working band | status |
+| :----------------: | :------------:|
+| EU_433 | Worked well |
+| CN_470_510 | Debugging |
+| EU_863_870 | Worked well |
+| US_902_928 | Worked well |
 
 What certainly works:
  - Sending packets uplink, taking into account duty cycling.
