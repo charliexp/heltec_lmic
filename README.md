@@ -15,6 +15,8 @@ requires C99 mode to be enabled by default.
 
 This library fixed from https://github.com/matthijskooijman/arduino-lmic
 Only tested with Heltec ESP32+LoRa series.
+- Hardware
+  ![image](doc/hardware.jpg)
 
 Installing
 ----------
