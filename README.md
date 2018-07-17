@@ -1,9 +1,8 @@
 Arduino-LMIC library
 ====================
 This repository contains the IBM LMIC (LoraMAC-in-C) library, slightly
-modified to run in the Arduino environment, allowing using the SX1272,
-SX1276 tranceivers and compatible modules (such as some HopeRF RFM9x
-modules).
+modified to run in the ESP32 + Arduino environment, mainly fixed for 
+Heltec Automation produced ESP32 + LoRa series products.
 
 This library mostly exposes the functions defined by LMIC, it makes no
 attempt to wrap them in a higher level API that is more in the Arduino
