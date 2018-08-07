@@ -7,8 +7,8 @@
 
 //#define CFG_cn470 1 //Receive down link from gateway still have problem, in debugging
 //#define CFG_eu433 1 //tested! worked fine.
-//#define CFG_eu868 1 //tested! worked fine.
-#define CFG_us915 1 //tested! worked fine.
+#define CFG_eu868 1 //tested! worked fine.
+//#define CFG_us915 1 //tested! worked fine.
 // This code only work and tested with Heltec ESP32+LoRa series.
 
 #define CFG_sx1276_radio 1

@@ -188,7 +188,7 @@ struct lmic_t {
     u2_t        channelDrMap[MAX_CHANNELS];
     u2_t        channelMap;
 #elif defined(CFG_cn470)
-    band_t      bands[MAX_BANDS];
+    band_t		bands[MAX_BANDS];
     u4_t        channelFreq[MAX_CHANNELS];
     u2_t        channelDrMap[MAX_CHANNELS];
     u2_t        channelMap;

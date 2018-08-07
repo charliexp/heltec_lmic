@@ -51,13 +51,13 @@ typedef const char* str_t;
 #define os_clearMem(a,b)   memset(a,0,b)
 #define os_copyMem(a,b,c)  memcpy(a,b,c)
 
-typedef     struct osjob_t osjob_t;
-typedef      struct band_t band_t;
+typedef   struct osjob_t osjob_t;
+typedef   struct band_t band_t;
 typedef   struct chnldef_t chnldef_t;
 typedef   struct rxsched_t rxsched_t;
 typedef   struct bcninfo_t bcninfo_t;
-typedef        const u1_t* xref2cu1_t;
-typedef              u1_t* xref2u1_t;
+typedef    const u1_t* xref2cu1_t;
+typedef          u1_t* xref2u1_t;
 #define TYPEDEF_xref2rps_t     typedef         rps_t* xref2rps_t
 #define TYPEDEF_xref2rxsched_t typedef     rxsched_t* xref2rxsched_t
 #define TYPEDEF_xref2chnldef_t typedef     chnldef_t* xref2chnldef_t

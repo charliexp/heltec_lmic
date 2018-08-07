@@ -709,9 +709,9 @@ static void updateTx (ostime_t txbeg) {
     if( LMIC.globalDutyRate != 0 )
         LMIC.globalDutyAvail = txbeg + (airtime<<LMIC.globalDutyRate);
     #if LMIC_DEBUG_LEVEL > 1
-        lmic_printf("%lu: Updating info for TX at %lu, airtime will be %lu. Setting available time for band %d to %lu\n", os_getTime(), txbeg, airtime, freq & 0x3, band->avail);
+        lmic_printf("%d: Updating info for TX at %d, airtime will be %d. Setting available time for band %d to %d\n", os_getTime(), txbeg, airtime, freq & 0x3, band->avail);
         if( LMIC.globalDutyRate != 0 )
-            lmic_printf("%lu: Updating global duty avail to %lu\n", os_getTime(), LMIC.globalDutyAvail);
+            lmic_printf("%d: Updating global duty avail to %d\n", os_getTime(), LMIC.globalDutyAvail);
     #endif
 }
 
@@ -723,7 +723,7 @@ static ostime_t nextTx (ostime_t now) {
         for( u1_t bi=0; bi<4; bi++ ) {
             if( (bmap & (1<<bi)) && mintime - LMIC.bands[bi].avail > 0 ) {
                 #if LMIC_DEBUG_LEVEL > 1
-                    lmic_printf("%lu: Considering band %d, which is available at %lu\n", os_getTime(), bi, LMIC.bands[bi].avail);
+                    lmic_printf("%d: Considering band %d, which is available at %d\n", os_getTime(), bi, LMIC.bands[bi].avail);
                 #endif
                 mintime = LMIC.bands[band = bi].avail;
             }
@@ -741,7 +741,7 @@ static ostime_t nextTx (ostime_t now) {
             }
         }
         #if LMIC_DEBUG_LEVEL > 1
-            lmic_printf("%lu: No channel found in band %d\n", os_getTime(), band);
+            lmic_printf("%d: No channel found in band %d\n", os_getTime(), band);
         #endif
         if( (bmap &= ~(1<<band)) == 0 ) {
             // No feasible channel  found!
@@ -802,9 +802,9 @@ static ostime_t nextJoinState (void) {
          : DNW2_SAFETY_ZONE+rndDelay(255>>LMIC.datarate));
     #if LMIC_DEBUG_LEVEL > 1
         if (failed)
-            lmic_printf("%lu: Join failed\n", os_getTime());
+            lmic_printf("%d: Join failed\n", os_getTime());
         else
-            lmic_printf("%lu: Scheduling next join at %lu\n", os_getTime(), LMIC.txend);
+            lmic_printf("%d: Scheduling next join at %d\n", os_getTime(), LMIC.txend);
     #endif
     // 1 - triggers EV_JOIN_FAILED event
     return failed;
@@ -1141,9 +1141,9 @@ static void updateTx (ostime_t txbeg) {
     if( LMIC.globalDutyRate != 0 )
         LMIC.globalDutyAvail = txbeg + (airtime<<LMIC.globalDutyRate);
     #if LMIC_DEBUG_LEVEL > 1
-        lmic_printf("%lu: Updating info for TX at %lu, airtime will be %lu. Setting available time for band %d to %lu\n", os_getTime(), txbeg, airtime, freq & 0x3, band->avail);
+        lmic_printf("%d: Updating info for TX at %d, airtime will be %d. Setting available time for band %d to %d\n", os_getTime(), txbeg, airtime, freq & 0x3, band->avail);
         if( LMIC.globalDutyRate != 0 )
-            lmic_printf("%lu: Updating global duty avail to %lu\n", os_getTime(), LMIC.globalDutyAvail);
+            lmic_printf("%d: Updating global duty avail to %d\n", os_getTime(), LMIC.globalDutyAvail);
     #endif
 }
 
@@ -1155,7 +1155,7 @@ static ostime_t nextTx (ostime_t now) {
         for( u1_t bi=0; bi<4; bi++ ) {
             if( (bmap & (1<<bi)) && mintime - LMIC.bands[bi].avail > 0 ) {
                 #if LMIC_DEBUG_LEVEL > 1
-                    lmic_printf("%lu: Considering band %d, which is available at %lu\n", os_getTime(), bi, LMIC.bands[bi].avail);
+                    lmic_printf("%d: Considering band %d, which is available at %d\n", os_getTime(), bi, LMIC.bands[bi].avail);
                 #endif
                 mintime = LMIC.bands[band = bi].avail;
             }
@@ -1173,7 +1173,7 @@ static ostime_t nextTx (ostime_t now) {
             }
         }
         #if LMIC_DEBUG_LEVEL > 1
-            lmic_printf("%lu: No channel found in band %d\n", os_getTime(), band);
+            lmic_printf("%d: No channel found in band %d\n", os_getTime(), band);
         #endif
         if( (bmap &= ~(1<<band)) == 0 ) {
             // No feasible channel  found!
@@ -1234,9 +1234,9 @@ static ostime_t nextJoinState (void) {
          : DNW2_SAFETY_ZONE+rndDelay(255>>LMIC.datarate));
     #if LMIC_DEBUG_LEVEL > 1
         if (failed)
-            lmic_printf("%lu: Join failed\n", os_getTime());
+            lmic_printf("%d: Join failed\n", os_getTime());
         else
-            lmic_printf("%lu: Scheduling next join at %lu\n", os_getTime(), LMIC.txend);
+            lmic_printf("%d: Scheduling next join at %d\n", os_getTime(), LMIC.txend);
     #endif
     // 1 - triggers EV_JOIN_FAILED event
     return failed;
