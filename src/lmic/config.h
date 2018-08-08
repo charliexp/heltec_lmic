@@ -11,6 +11,12 @@
 //#define CFG_us915 1 //tested! worked fine.
 // This code only work and tested with Heltec ESP32+LoRa series.
 
+
+//WIFI LoRa 32 V1 and V2 have a different pin define, for details please see change logs.
+//#define V1 1
+#define V2 1
+
+
 #define CFG_sx1276_radio 1
 
 // 16 μs per tick

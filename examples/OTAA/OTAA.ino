@@ -61,12 +61,22 @@ static osjob_t sendjob;
 const unsigned TX_INTERVAL = 20;
 
 // Pin mapping
+#if defined(V1)
 const lmic_pinmap lmic_pins = {
     .nss = 18,
     .rxtx = LMIC_UNUSED_PIN,
     .rst = 14,
     .dio = {26, 33, 32},
 };
+#elif defined(V2)
+const lmic_pinmap lmic_pins = {
+    .nss = 18,
+    .rxtx = LMIC_UNUSED_PIN,
+    .rst = 14,
+    .dio = {26, 35, 34},
+};
+#endif
+
 
 void onEvent (ev_t ev) {
     Serial.print(os_getTime());
